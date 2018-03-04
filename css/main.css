@@ -1,18 +1,16 @@
-/*! HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+/* based on HTML5 Boilerplate v6.0.1 | MIT License | https://html5boilerplate.com/ */
 
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
 html {
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     color: #222;
-    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
     line-height: 1.4;
 }
 
@@ -65,6 +63,18 @@ video {
 }
 
 /*
+ * Makes images, videos responsive
+ */
+
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
  * Remove default fieldset styles.
  */
 
@@ -82,6 +92,15 @@ textarea {
     resize: vertical;
 }
 
+/*
+ * Removes margins from headers
+ */
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -94,26 +113,6 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
    Helper classes
    ========================================================================== */
 
@@ -121,7 +120,7 @@ textarea {
  * Hide visually and from screen readers
  */
 
-.hidden {
+ .hidden {
     display: none !important;
 }
 
@@ -145,7 +144,8 @@ textarea {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -189,8 +189,10 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
@@ -198,20 +200,103 @@ textarea {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Layout styles
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+ul {
+    padding: 0;
+    list-style-type: none;
 }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+/* .container {
+
+} */
+
+.content {
+    background: blue;
+}
+
+footer {
+    background: green;
+}
+
+.menu {
+    background: -webkit-gradient(linear, left bottom, left top, from(#ff5e28), color-stop(#ff5233), color-stop(#ff453d), color-stop(#ff3747), to(#ff2851));
+    background: linear-gradient(to top, #ff5e28, #ff5233, #ff453d, #ff3747, #ff2851);
+    color: #fff;
+    min-width: 320px;
+    min-height: 411px;
+    height: calc(100vh - 6em);
+    padding: 3em 0;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.social-icons li {
+    display: inline;
+}
+
+.social-icons a {
+    color: #fff;
+}
+
+.svg-inline--fa {
+    font-size: 1.4em;
+    /* transition: all .3s; */
+    padding-right: 12px;
+}
+
+.fa-envelope {
+    padding-right: 0;
+}
+
+/* ==========================================================================
+   Media Queries for Responsive Design
+   ========================================================================== */
+
+@media screen and (min-width: 992px) {
+
+    .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100vh;
+    }
+
+    .content {
+        -ms-flex-item-align: center;
+            align-self: center;
+        -webkit-box-flex: 2;
+            -ms-flex: 2 1 auto;
+                flex: 2 1 auto;
+        overflow: auto;
+    }
+
+    footer {
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+    }
+
+    .menu {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 30%;
+                flex: 1 0 30%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* .part {
+        max-width: 500px;
+    } */
 }
 
 /* ==========================================================================
@@ -225,35 +310,31 @@ textarea {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+                box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
@@ -262,28 +343,23 @@ textarea {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
