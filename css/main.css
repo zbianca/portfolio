@@ -200,6 +200,38 @@ h2 {
 }
 
 /* ==========================================================================
+   Typography styles
+   ========================================================================== */
+
+figure {
+    display: table;
+}
+
+figcaption {
+    text-align: center;
+    color: #B30900;
+    font-size: 1.6em;
+    display: table-caption;
+    caption-side: top;
+}
+
+h2 {
+    padding: 1.6em 0 0;
+}
+
+.menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.menu a:hover,
+.menu a svg:hover {
+    color: #caff52;
+    transition: 0.2s;
+}
+
+   /* ==========================================================================
    Layout styles
    ========================================================================== */
 
